@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const exphbs = require("express-handlebars");
 const session = require("express-session");
-//const routes = require("./routes");
+const routes = require("./routes");
 //const helpers = require("./utils/helpers");
 // const hbs = exphbs.create({
 //     helpers
@@ -12,7 +12,7 @@ const app = express();
 
 const PORT = process.env.PORT || 3001;
 
-app.engine("handlebars", hbs.engine);
+// app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
 const sessionConfig = {
@@ -29,7 +29,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(session(sessionConfig));
 
 // ROUTES
-//app.use("/", routes);
+app.use("/", routes);
 
 // SERVER LISTENER
 sequelize.sync({ force: false }).then(() => {

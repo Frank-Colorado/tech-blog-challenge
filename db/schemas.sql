@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS todoBlog_db;
+CREATE DATABASE todoBlog_db;
