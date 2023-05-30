@@ -50,5 +50,16 @@ User.init(
                         console.log({ err });
                     }
                 },
+                    // This is a hook that will automatically run before a user is updated
+                    beforeUpdate: async (updatedUserData) => {
+                        try {
+                            const { password, username } = updatedUserData;
+                            password = await bcrypt.hash(password, 10);
+                            username = username.toLowerCase().trim();
+                            return updatedUserData;
+                        } catch (err) {
+                            console.log({ err });
+                        }
+                    }
             
             },
