@@ -15,51 +15,57 @@ class User extends Model {
 }
 
 User.init(
-    {
-        // columns will go here
-        id: {
-            primaryKey: true,
-            type: DataTypes.UUID,
-            defaultValue: DataTypes.UUIDV4,
-            allowNull: false,
-
-        },
-        username: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: { len: [3, 20] },
-        },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: { len: [8, 20] },
-        },
+  {
+    // columns will go here
+    id: {
+      primaryKey: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      allowNull: false,
     },
-    {
-             // hooks will go here
-             hooks: {
-                // This is a hook that will automatically run before a new user is created
-                beforeCreate: async (newUserData) => { 
-                    try {
-                        const { password, username } = newUserData;
-                        password = await bcrypt.hash(newUserData.password, 10);
-                        username = username.toLowerCase().trim();
-                        return newUserData;
-                    } catch (err) {
-                        console.log({ err });
-                    }
-                },
-                    // This is a hook that will automatically run before a user is updated
-                    beforeUpdate: async (updatedUserData) => {
-                        try {
-                            const { password, username } = updatedUserData;
-                            password = await bcrypt.hash(password, 10);
-                            username = username.toLowerCase().trim();
-                            return updatedUserData;
-                        } catch (err) {
-                            console.log({ err });
-                        }
-                    }
-            
-            },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: { len: [3, 20] },
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: { len: [8, 20] },
+    },
+  },
+  {
+    // hooks will go here
+    hooks: {
+      // This is a hook that will automatically run before a new user is created
+      beforeCreate: async (newUserData) => {
+        try {
+          const { password, username } = newUserData;
+          password = await bcrypt.hash(newUserData.password, 10);
+          username = username.toLowerCase().trim();
+          return newUserData;
+        } catch (err) {
+          console.log({ err });
+        }
+      },
+      // This is a hook that will automatically run before a user is updated
+      beforeUpdate: async (updatedUserData) => {
+        try {
+          const { password, username } = updatedUserData;
+          password = await bcrypt.hash(password, 10);
+          username = username.toLowerCase().trim();
+          return updatedUserData;
+        } catch (err) {
+          console.log({ err });
+        }
+      },
+    },
+    sequelize,
+    timestamps: true,
+    freezeTableName: true,
+    modelName: "user",
+  }
+);
+
+module.exports = User;
