@@ -13,3 +13,28 @@ class User extends Model {
     }
   }
 }
+
+User.init(
+    {
+        // columns will go here
+        id: {
+            primaryKey: true,
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
+            allowNull: false,
+
+        },
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+            validate: { len: [3, 20] },
+        },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: { len: [8, 20] },
+        },
+    },
+    {
+   
