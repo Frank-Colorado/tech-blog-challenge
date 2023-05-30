@@ -20,7 +20,7 @@ Post.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    // foreign key
+    // foreign keys
     user_id: {
       type: DataTypes.UUID,
       references: {
