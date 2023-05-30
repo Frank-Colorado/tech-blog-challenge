@@ -37,4 +37,18 @@ User.init(
         },
     },
     {
-   
+             // hooks will go here
+             hooks: {
+                // This is a hook that will automatically run before a new user is created
+                beforeCreate: async (newUserData) => { 
+                    try {
+                        const { password, username } = newUserData;
+                        password = await bcrypt.hash(newUserData.password, 10);
+                        username = username.toLowerCase().trim();
+                        return newUserData;
+                    } catch (err) {
+                        console.log({ err });
+                    }
+                },
+            
+            },
