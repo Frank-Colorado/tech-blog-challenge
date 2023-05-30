@@ -16,7 +16,7 @@ class User extends Model {
 
 User.init(
   {
-    // columns will go here
+    // columns
     id: {
       primaryKey: true,
       type: DataTypes.UUID,
@@ -36,7 +36,7 @@ User.init(
     },
   },
   {
-    // hooks will go here
+    // hooks
     hooks: {
       // This is a hook that will automatically run before a new user is created
       beforeCreate: async (newUserData) => {
