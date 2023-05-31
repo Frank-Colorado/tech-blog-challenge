@@ -1,7 +1,13 @@
+/* General */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.lg-font {
+  font-size: 1.25rem;
 }
 
 /* Navbar */
