@@ -33,35 +33,35 @@
       <div class="container-fluid p-2">
         <h1 class="logo">Tech Blog</h1>
       </div>
-      {{#if loggedIn}}
-        <div class="userNav me-5">
-          <button
-            class="dropdownBtn dropdown-toggle"
-            type="button"
-            id="dropdownBtn"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="true"
-          >
-            <i class="fa-solid fa-user" style="color: #ffffff;"></i>
-          </button>
-
-          <div id="dropdown" class="show dropdown">
-            <a
-              id="homeBtn"
-              class="dropdown-item text-light"
-              href="/home"
-            >Home</a>
-            <a
-              id="dashboardBtn"
-              class="dropdown-item text-light"
-              href="/"
-            >Dashboard</a>
-            <a id="logoutBtn" class="dropdown-item text-light">Log out</a>
-          </div>
+      {{!-- {{#if loggedIn}} --}}
+      <div class="userNav me-5">
+        <button
+          class="dropdownBtn dropdown-toggle"
+          type="button"
+          id="dropdownBtn"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="true"
+        >
+          <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+        </button>
+        <div id="dropdown" class="show dropdown">
+          <a id="homeBtn" class="dropdown-item" href="/home">Home</a>
+          <a id="dashboardBtn" class="dropdown-item" href="/">Dashboard</a>
+          <a id="logoutBtn" class="dropdown-item">Log out</a>
         </div>
+      </div>
+      {{!-- {{else}} --}}
+      <div class="userNav me-5">
+        <button id="loginBtn" class="btn me-2" type="button">
+          Login
+        </button>
+        <button id="signupBtn" class="btn" type="button">
+          Sign Up
+        </button>
 
-      {{/if}}
+      </div>
+      {{!-- {{/if}} --}}
 
     </nav>
   </header>
