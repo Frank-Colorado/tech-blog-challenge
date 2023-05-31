@@ -5,8 +5,22 @@ const createUser = async (req, res) => {
   try {
     // We destructure the username and password properties from req.body
     const { username, password } = req.body;
+    // We search the User Model for a user with the username that was entered in the signup form
+    const user = await User.findOne({ where: { username } });
+    // If the user is found, we send a response with a 400 status code and an error message
+    if (user) {
+      res.status(400).json({ message: "User already exists!" });
+      return;
+    }
+    // If the user is not found,
     // We create a new user with the username and password that was entered in the signup form
     const newUser = await User.create({ username, password });
+    // If the user's username or password fails the length validation, we send a response with a 400 status code and an error message
+    if (!newUser) {
+      res.status(400).json({ message: "Username or password is too short!" });
+      return;
+    }
+    // If the user is created successfully,
     // After we create a new user, we create a session for the user
     req.session.save(() => {
       // we save the users id
