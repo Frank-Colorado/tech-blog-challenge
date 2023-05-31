@@ -5,10 +5,6 @@ const displayHome = (req, res) => {
   res.render("home");
 };
 
-module.exports = {
-  displayHome,
-};
-
 // This is a function that will display the login page
 const displayLogin = (req, res) => {
   if (req.session.loggedIn) {
@@ -16,4 +12,9 @@ const displayLogin = (req, res) => {
     return;
   }
   res.render("login");
+};
+
+module.exports = {
+  displayHome,
+  displayLogin,
 };
