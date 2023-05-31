@@ -86,3 +86,9 @@ const logoutUser = async (req, res) => {
     res.status(500).json({ error: "Failed to logout" });
   }
 };
+
+module.exports = {
+  createUser,
+  loginUser,
+  logoutUser,
+};
