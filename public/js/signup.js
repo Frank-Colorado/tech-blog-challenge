@@ -53,11 +53,12 @@ $signupBtn.addEventListener("click", (e) => {
   // We get the values of the username and password fields
   const username = $username.value;
   const password = $password.value.trim();
-  // We check if the username and password are empty
-  if (!username || !password) {
-    // If they are, we call the alertDisplay function
-    // We pass it the message "Please enter a username and password"
-    alertDisplay("Please enter a username and password");
+  // We check if the username is between 3 and 20 characters and if the password is over 8 characters
+  if (username.length < 3 || username.length > 20 || password.length < 8) {
+    // If the username or password fails the length validation, we call the alertDisplay function
+    // We pass it an error message
+    alertDisplay("Username or password is too short!");
+    return;
   }
 
   // We create a user object

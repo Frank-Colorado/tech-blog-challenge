@@ -15,13 +15,8 @@ const createUser = async (req, res) => {
     // If the user is not found,
     // We create a new user with the username and password that was entered in the signup form
     const newUser = await User.create({ username, password });
-    // If the user's username or password fails the length validation, we send a response with a 400 status code and an error message
-    if (!newUser) {
-      res.status(400).json({ error: "Username or password is too short!" });
-      return;
-    }
     // If the user is created successfully,
-    // After we create a new user, we create a session for the user
+    // We create a session for the user
     req.session.save(() => {
       // we save the users id
       req.session.user_id = newUser.id;
