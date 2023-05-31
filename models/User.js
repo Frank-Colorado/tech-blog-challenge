@@ -32,7 +32,7 @@ User.init(
     password: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: { len: [8, 20] },
+      validate: { len: [8] },
     },
   },
   {
