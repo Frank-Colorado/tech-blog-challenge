@@ -63,3 +63,21 @@
   width: 160px;
   z-index: 100;
 }
+
+/* BUTTON STYLING */
+.btn {
+  font-weight: 400;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #272b33;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+  color: #fff;
+  background-color: #272b33;
+  border-color: #272b33;
+  box-shadow: 0 0 0 0.1rem rgba(39, 43, 51, 0.5);
+}
