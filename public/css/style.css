@@ -5,6 +5,7 @@
 }
 
 /* Navbar */
+
 .navbar {
   color: rgba(255, 255, 255, 1);
   background-color: #272b33;
@@ -15,6 +16,18 @@
 
 .userNav {
   display: flex;
+}
+
+.userNav a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.userNav a:hover {
+  background-color: transparent !important;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .dropdownBtn {
@@ -43,20 +56,4 @@
   top: 70%;
   width: 160px;
   z-index: 100;
-}
-
-.dropdown a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-.dropdown a:hover {
-  background-color: transparent !important;
-  cursor: pointer;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-h3 {
-  text-align: center;
 }

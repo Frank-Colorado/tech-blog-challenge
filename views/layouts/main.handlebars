@@ -34,7 +34,7 @@
         <h1>Tech Blog</h1>
       </div>
       {{!-- {{#if loggedIn}} --}}
-      <div class="userNav me-5">
+      {{! <div class="userNav me-5">
         <button
           class="dropdownBtn dropdown-toggle"
           type="button"
@@ -54,16 +54,16 @@
           >Dashboard</a>
           <a id="logoutBtn" class="dropdown-item">Log out</a>
         </div>
-      </div>
-      {{!-- {{else}} --}}
-      {{! <div class="userNav me-5">
-        <button id="loginBtn" class="btn m-3" type="button">
-          Sign In
-        </button>
-        <button id="signupBtn" class="btn m-3" type="button">
-          Sign Up
-        </button>
       </div> }}
+      {{!-- {{else}} --}}
+      <div class="userNav me-5 lg-font">
+        <a id="loginBtn" class="dropdown-item" href="/login">
+          Sign In
+        </a>
+        <a id="signupBtn" class="dropdown-item" href="/signup">
+          Sign Up
+        </a>
+      </div>
       {{!-- {{/if}} --}}
 
     </nav>
