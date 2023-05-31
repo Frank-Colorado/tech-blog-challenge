@@ -9,7 +9,7 @@ const createUser = async (req, res) => {
     const user = await User.findOne({ where: { username } });
     // If the user is found, we send a response with a 400 status code and an error message
     if (user) {
-      res.status(400).json({ message: "User already exists!" });
+      res.status(400).json({ error: "User already exists!" });
       return;
     }
     // If the user is not found,
@@ -17,7 +17,7 @@ const createUser = async (req, res) => {
     const newUser = await User.create({ username, password });
     // If the user's username or password fails the length validation, we send a response with a 400 status code and an error message
     if (!newUser) {
-      res.status(400).json({ message: "Username or password is too short!" });
+      res.status(400).json({ error: "Username or password is too short!" });
       return;
     }
     // If the user is created successfully,
