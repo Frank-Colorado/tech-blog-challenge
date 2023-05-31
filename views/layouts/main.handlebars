@@ -33,38 +33,38 @@
       <div class="container-fluid p-2">
         <h1>Tech Blog</h1>
       </div>
-      {{!-- {{#if logged_in}} --}}
-      {{! <div class="userNav me-5">
-        <button
-          class="dropdownBtn dropdown-toggle"
-          type="button"
-          id="dropdownBtn"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="true"
-        >
-          <i class="fa-solid fa-user" style="color: #ffffff;"></i>
-        </button>
-        <div id="dropdown" class="show dropdown">
-          <a id="homeBtn" class="dropdown-item" href="/">Home</a>
-          <a
-            id="dashboardBtn"
-            class="dropdown-item"
-            href="/dashboard"
-          >Dashboard</a>
-          <a id="logoutBtn" class="dropdown-item">Log out</a>
+      {{#if logged_in}}
+        <div class="userNav me-5">
+          <button
+            class="dropdownBtn dropdown-toggle"
+            type="button"
+            id="dropdownBtn"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="true"
+          >
+            <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+          </button>
+          <div id="dropdown" class="show dropdown">
+            <a id="homeBtn" class="dropdown-item" href="/">Home</a>
+            <a
+              id="dashboardBtn"
+              class="dropdown-item"
+              href="/dashboard"
+            >Dashboard</a>
+            <a id="logoutBtn" class="dropdown-item">Log out</a>
+          </div>
         </div>
-      </div> }}
-      {{!-- {{else}} --}}
-      <div class="userNav me-5 lg-font">
-        <a class="dropdown-item me-4" href="/login">
-          Sign In
-        </a>
-        <a class="dropdown-item me-4" href="/signup">
-          Sign Up
-        </a>
-      </div>
-      {{!-- {{/if}} --}}
+      {{else}}
+        <div class="userNav me-5 lg-font">
+          <a class="dropdown-item me-4" href="/login">
+            Sign In
+          </a>
+          <a class="dropdown-item me-4" href="/signup">
+            Sign Up
+          </a>
+        </div>
+      {{/if}}
 
     </nav>
   </header>

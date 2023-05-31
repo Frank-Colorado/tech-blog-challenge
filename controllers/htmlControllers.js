@@ -14,7 +14,13 @@ const displayLogin = (req, res) => {
   res.render("login");
 };
 
+// This is a function that will display the signup page
+const displaySignup = (req, res) => {
+  res.render("signup");
+};
+
 module.exports = {
   displayHome,
   displayLogin,
+  displaySignup,
 };
