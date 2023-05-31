@@ -40,7 +40,7 @@ const loginUser = async (req, res) => {
       return;
     }
     // If the user is found,
-    // We check the password that the user sent us with the checkPassword isntance method that we created in the User model
+    // We check the password that the user sent us with the checkPassword instance method that we created in the User model
     const validPassword = await user.checkPassword(password);
     // If the password is not valid, we send a response with a 400 status code and an error message
     if (!validPassword) {
@@ -64,5 +64,25 @@ const loginUser = async (req, res) => {
     // If there is an error, we log the error and send a response with a 500 status code and an error message
     console.error({ err });
     res.status(500).json({ error: "Failed to login" });
+  }
+};
+
+// This is a function called logoutUser that will be called with the POST /api/users/logout route
+const logoutUser = async (req, res) => {
+  try {
+    // If the user is logged in, we destroy the session
+    if (req.session.logged_in) {
+      req.session.destroy(() => {
+        // We send a response to the client with a message
+        res.status(204).json({ message: "Logout successful!" });
+      });
+    } else {
+      // If the user is not logged in, we send a response with a 404 status code and a message
+      res.status(404).json({ message: "No user logged in!" });
+    }
+  } catch (err) {
+    // If there is an error, we log the error and send a response with a 500 status code and an error message
+    console.error({ err });
+    res.status(500).json({ error: "Failed to logout" });
   }
 };
