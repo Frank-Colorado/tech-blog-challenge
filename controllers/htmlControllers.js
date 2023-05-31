@@ -19,8 +19,14 @@ const displaySignup = (req, res) => {
   res.render("signup");
 };
 
+// This is a function that will display the dashboard page
+const displayDashboard = async (req, res) => {
+  res.render("dashboard");
+};
+
 module.exports = {
   displayHome,
   displayLogin,
   displaySignup,
+  displayDashboard,
 };
