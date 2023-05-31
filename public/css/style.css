@@ -7,6 +7,45 @@
 /* Navbar */
 .navbar {
   background-color: gray;
-  border: 3px solid black;
-  overflow: hidden;
+  border: 2px solid black;
+}
+
+/* UserNav Dropdown */
+
+.dropdownBtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #f2f2f2;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown {
+  background-clip: padding-box;
+  background-color: white;
+  border: max(1px, 0.0625rem) solid black;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px #010409;
+  left: 89%;
+  list-style: none;
+  margin-top: 2px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  position: absolute;
+  top: 70%;
+  width: 160px;
+  z-index: 100;
+}
+
+.dropdown a:hover {
+  background-color: transparent !important;
+  cursor: pointer;
+  border-bottom: max(1px) solid black;
+}
+
+h3 {
+  text-align: center;
 }
