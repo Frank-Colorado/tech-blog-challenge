@@ -1,9 +1,12 @@
-<div class="card-container">
+<div class="container-fluid d-flex justify-content-center">
   {{#if posts.length}}
     {{#each posts as |post|}}
-      {{> post-details}}
+      <div class="col-8 text-center">
+        {{!-- {{> post-details}} --}}
     {{/each}}
   {{else}}
-    <h2>No posts yet...</h2>
+    <div class="text-center mt-5">
+      <h2 class="pt-5">No posts yet...</h2>
+    </div>
   {{/if}}
 </div>
