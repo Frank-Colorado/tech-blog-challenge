@@ -38,6 +38,18 @@ User.init(
   {
     // hooks
     hooks: {
+      // This is a hook that will automatically run before a bulk create (i.e. seeding) of users
+      beforeBulkCreate: async (newUserData) => {
+        try {
+          for (const user of newUserData) {
+            user.password = await bcrypt.hash(user.password, 10);
+            user.username = user.username.trim();
+          }
+          return newUserData;
+        } catch (err) {
+          console.log({ err });
+        }
+      },
       // This is a hook that will automatically run before a new user is created
       beforeCreate: async (newUserData) => {
         try {
