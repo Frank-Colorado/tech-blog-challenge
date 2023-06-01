@@ -1,10 +1,12 @@
 <div class="container-fluid d-flex justify-content-center">
   {{#if posts.length}}
+     <div class="col-7 text-center">
     {{#each posts as |post|}}
-      <div class="col-7">
+   
         {{> post-details}}
-      </div>
+   
     {{/each}}
+    </div>
   {{else}}
     <div class="text-center mt-5">
       <h2 class="pt-5">No posts yet...</h2>
