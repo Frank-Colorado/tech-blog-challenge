@@ -37,3 +37,5 @@ const seedComments = async () => {
     console.log({ err });
   }
 };
+
+module.exports = seedComments;
