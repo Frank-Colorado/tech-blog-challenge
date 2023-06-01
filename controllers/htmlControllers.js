@@ -2,7 +2,11 @@ const { User, Post, Comment } = require("../models");
 
 // This is a function that will display the home page
 const displayHome = (req, res) => {
-  res.render("home", { logged_in: req.session.logged_in, header: "Tech Blog" });
+  res.render("home", {
+    nav: true,
+    logged_in: req.session.logged_in,
+    header: "Tech Blog",
+  });
 };
 
 // This is a function that will display the login page
@@ -22,6 +26,7 @@ const displaySignup = (req, res) => {
 // This is a function that will display the dashboard page
 const displayDashboard = async (req, res) => {
   res.render("dashboard", {
+    nav: true,
     logged_in: req.session.logged_in,
     header: "Dashboard",
   });
