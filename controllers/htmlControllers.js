@@ -15,12 +15,16 @@ const displayLogin = (req, res) => {
     res.redirect("/");
     return;
   }
-  res.render("login");
+  res.render("login", {
+    header: "Login",
+  });
 };
 
 // This is a function that will display the signup page
 const displaySignup = (req, res) => {
-  res.render("signup");
+  res.render("signup", {
+    header: "Signup",
+  });
 };
 
 // This is a function that will display the dashboard page
