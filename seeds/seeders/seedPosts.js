@@ -15,7 +15,7 @@ const seedPosts = async () => {
       title: faker.lorem.words({ min: 1, max: 5 }),
       content: faker.lorem.paragraph({ min: 5, max: 10 }),
       // The object will also have an author property with a random username grabbed from the users array
-      author: faker.helpers.arrayElement(users),
+      author: faker.helpers.arrayElement(users).username,
     }));
     // bulkCreate will create the posts in the database
     const postData = await Post.bulkCreate(posts);
