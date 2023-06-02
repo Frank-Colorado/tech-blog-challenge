@@ -73,6 +73,7 @@ const displayPost = async (req, res) => {
       post,
       nav: true,
       logged_in: req.session.logged_in,
+      username: req.session.username,
       header: "Tech Blog",
     });
   } catch (err) {

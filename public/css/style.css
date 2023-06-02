@@ -10,6 +10,14 @@
   font-size: 1.25rem;
 }
 
+textarea {
+  resize: none;
+}
+
+.red {
+  color: red;
+}
+
 /* NAVBAR STYLING */
 
 .navbar {
@@ -52,4 +60,21 @@
   background-color: #272b33;
   border-color: #272b33;
   box-shadow: 0 0 0 0.1rem rgba(39, 43, 51, 0.5);
+}
+
+/* COMMENT STYLING */
+
+.comment-box {
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 40px;
+  box-shadow: 0 0 0 0.1rem rgba(39, 43, 51, 0.2);
+  height: 200px;
+}
+
+.comment-btn-container {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
 }
