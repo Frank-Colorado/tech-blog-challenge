@@ -22,3 +22,26 @@ const createPost = async (req, res) => {
     res.status(500).json({ error: "Failed to create post" });
   }
 };
+
+// This is a function called updatePost that will be called with the PUT /api/posts/:id route
+const updatePost = async (req, res) => {
+  try {
+    // We destructure the title and content from the req.body
+    const { title, content } = req.body;
+    // We update the post with the matching id
+    const updatedPost = await Post.update(
+      { title, content },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+    // We send a response to the client with the updated post
+    res.status(200).json(updatedPost);
+  } catch (err) {
+    // If there is an error, we log the error and send a response with a 500 status code and an error message
+    console.error({ err });
+    res.status(500).json({ error: "Failed to update post" });
+  }
+};
