@@ -17,7 +17,7 @@ const displayHome = async (req, res) => {
   } catch (err) {
     console.log("Problem with displayHome function");
     console.log({ err });
-    res.status(500).json(err);
+    res.status(500).json({ err });
   }
 };
 // This is a function that will display the login page
@@ -45,6 +45,41 @@ const displayDashboard = async (req, res) => {
     logged_in: req.session.logged_in,
     header: "Dashboard",
   });
+};
+
+// This is a function that will display a single Post and its Comments to its own page
+const displayPost = async (req, res) => {
+  try {
+    // Grab the post with the id passed in as a parameter
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: Comment,
+          attributes: [
+            "id",
+            ["content", "commentContent"],
+            ["author", "commentAuthor"],
+            "post_id",
+            "user_id",
+            "createdAt",
+          ],
+        },
+      ],
+    });
+    // Serialize the data so the template can read it
+    const post = postData.get({ plain: true });
+    // Render the post template with the post data
+    res.render("post", {
+      post,
+      nav: true,
+      logged_in: req.session.logged_in,
+      header: "Tech Blog",
+    });
+  } catch (err) {
+    console.log("Problem with displayPost function");
+    console.log({ err });
+    res.status(500).json({ err });
+  }
 };
 
 module.exports = {
