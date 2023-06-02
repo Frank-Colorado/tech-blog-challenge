@@ -40,11 +40,27 @@ const displaySignup = (req, res) => {
 
 // This is a function that will display the dashboard page
 const displayDashboard = async (req, res) => {
-  res.render("dashboard", {
-    nav: true,
-    logged_in: req.session.logged_in,
-    header: "Dashboard",
-  });
+  try {
+    // Grab all the users posts from the Post model
+    const postData = await Post.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
+    // Serialize the data so the template can read it
+    const posts = postData.map((post) => post.get({ plain: true }));
+    // render the dashboard template and pass the posts in as an object
+    res.render("dashboard", {
+      posts,
+      nav: true,
+      logged_in: req.session.logged_in,
+      header: "Dashboard",
+    });
+  } catch (err) {
+    console.log("Problem with displayDashboard function");
+    console.log({ err });
+    res.status(500).json({ err });
+  }
 };
 
 // This is a function that will display a single Post and its Comments to its own page
