@@ -1,11 +1,11 @@
 <div class="container-fluid d-flex justify-content-center">
   {{#if posts.length}}
-     <div class="col-7 text-center">
-    {{#each posts as |post|}}
-   
-        {{> post-details}}
-   
-    {{/each}}
+    <div class="col-7 text-center">
+      {{#each posts as |post|}}
+        <a href="href=/post/{{this.id}}">
+          {{> post-details}}
+        </a>
+      {{/each}}
     </div>
   {{else}}
     <div class="text-center mt-5">

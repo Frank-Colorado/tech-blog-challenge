@@ -10,6 +10,11 @@
   font-size: 1.25rem;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* NAVBAR STYLING */
 
 .navbar {
