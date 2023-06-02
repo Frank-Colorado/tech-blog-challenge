@@ -5,7 +5,7 @@
     <div id="comment-form">
       <textarea
         id="commentInput"
-        class="comment-box p-3 col-6"
+        class="comment-box p-3"
         name="content"
         placeholder="What are your thoughts?"
       ></textarea>
@@ -20,11 +20,11 @@
       </div>
 
     </div>
-    <div>
-      <h3>Comments</h3>
+    <div class="d-flex flex-column align-items-center my-5">
+      <h2>Comments</h2>
       {{#if post.comments.length}}
         {{#each post.comments as |comment|}}
-          {{!-- {{> comment-details }} --}}
+          {{> comment-details }}
         {{/each}}
       {{else}}
         <h3 class="mt-5">No comments yet...</h3>

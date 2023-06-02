@@ -70,11 +70,16 @@ textarea {
   margin: 20px;
   padding: 40px;
   box-shadow: 0 0 0 0.1rem rgba(39, 43, 51, 0.2);
-  height: 200px;
+  width: 75%;
+  height: 150px;
 }
 
 .comment-btn-container {
-  width: 50%;
+  width: 87%;
   display: flex;
   justify-content: flex-end;
+}
+
+.comment {
+  width: 75%;
 }
