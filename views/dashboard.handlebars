@@ -7,7 +7,7 @@
     <div class="col-5 text-center mt-5 post-container">
       {{#each posts as |post|}}
         <a href="/edit/{{post.id}}">
-          <div class="user-post">
+          <div class="user-post mb-5">
             <h5 class="py-3">{{post.title}}</h5>
             <h5 class="py-3">{{format_date post.createdAt}}</h5>
           </div>
