@@ -63,6 +63,15 @@ const displayDashboard = async (req, res) => {
   }
 };
 
+// This is a function that will display the create post page
+const displayCreatePost = (req, res) => {
+  res.render("createPost", {
+    nav: true,
+    logged_in: req.session.logged_in,
+    header: "Create a Post",
+  });
+};
+
 // This is a function that will display a single Post and its Comments to its own page
 const displayPost = async (req, res) => {
   try {
@@ -104,5 +113,6 @@ module.exports = {
   displayLogin,
   displaySignup,
   displayDashboard,
+  displayCreatePost,
   displayPost,
 };
