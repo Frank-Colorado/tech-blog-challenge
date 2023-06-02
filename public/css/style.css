@@ -50,11 +50,13 @@ textarea {
 
 /* BUTTON STYLING */
 .btn {
+  font-size: 1.25rem;
   font-weight: 400;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid #272b33;
   transition: all 0.3s ease-in-out;
+  width: 100px;
 }
 
 .btn:hover,
