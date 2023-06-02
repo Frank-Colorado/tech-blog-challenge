@@ -19,6 +19,10 @@ const sessionConfig = {
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
+  rolling: true, // The session will be reset to maxAge on every request
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 2, // The session will be stored for 2 hours
+  },
 };
 
 // MIDDLEWARES
