@@ -23,4 +23,7 @@ router.get("/dashboard", displayDashboard);
 // This route will display a single Post and its Comments to its own page
 router.get("/post/:id", displayPost);
 
+// This route will display the edit page for a single Post
+// router.get("/edit/:id", editPost);
+
 module.exports = router;
