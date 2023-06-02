@@ -5,6 +5,7 @@ const {
   displayLogin,
   displaySignup,
   displayDashboard,
+  displayPost,
 } = require("../../controllers/htmlControllers");
 
 // This route will display the home page
@@ -18,5 +19,8 @@ router.get("/signup", displaySignup);
 
 // This route will display the dashboard page
 router.get("/dashboard", displayDashboard);
+
+// This route will display a single Post and its Comments to its own page
+router.get("/post/:id", displayPost);
 
 module.exports = router;
