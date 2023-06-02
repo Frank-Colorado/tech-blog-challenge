@@ -33,7 +33,6 @@ const sendPost = async (post) => {
 
 // This is a click event listener for the post button
 $postBtn.addEventListener("click", () => {
-  console.log("clicked");
   // We set any previous alerts to empty
   $alert.textContent = "";
   // We get the values from the input fields
