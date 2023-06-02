@@ -49,8 +49,7 @@ $signupBtn.addEventListener("click", (e) => {
   if (username.length < 3 || username.length > 20 || password.length < 8) {
     // If the username or password fails the length validation, we call the alertDisplay function
     // We pass it an error message
-    alertDisplay("Username or password is too short!");
-    return;
+    return alertDisplay("Username or password is too short!");
   }
 
   // We create a user object

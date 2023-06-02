@@ -49,9 +49,7 @@ $loginBtn.addEventListener("click", (e) => {
   if (!username || !password) {
     // If they are, we call the alertDisplay function
     // We pass it the message "Please enter a username and password"
-    alertDisplay("Please enter a username and password");
-    // We return false to stop the function
-    return false;
+    return alertDisplay("Please enter a username and password");
   }
   // We create a new object called 'user'
   // It has 2 properties: username and password
