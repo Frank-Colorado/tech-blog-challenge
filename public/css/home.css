@@ -1,4 +1,9 @@
 /* POST STYLING */
+.post-container a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .post {
   background-color: #fff;
   border-radius: 5px;

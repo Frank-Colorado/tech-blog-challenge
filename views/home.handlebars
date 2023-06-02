@@ -1,6 +1,6 @@
 <div class="container-fluid d-flex justify-content-center">
   {{#if posts.length}}
-    <div class="col-7 text-center">
+    <div class="col-7 text-center post-container">
       {{#each posts as |post|}}
         <a href="href=/post/{{this.id}}">
           {{> post-details}}
