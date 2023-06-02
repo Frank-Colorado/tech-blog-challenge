@@ -75,6 +75,24 @@ textarea {
   height: 70px;
 }
 
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.updateBtn:hover {
+  color: #272b33;
+  background-color: #00ff00;
+  box-shadow: 0 0 0 0.1rem rgba(0, 255, 0, 0.2);
+}
+
+.deleteBtn:hover {
+  color: #272b33;
+  background-color: #ff0000;
+  box-shadow: 0 0 0 0.1rem rgba(255, 0, 0, 0.2);
+}
+
 /* COMMENT STYLING */
 
 .comment-box {
@@ -82,7 +100,7 @@ textarea {
   border-radius: 5px;
   margin: 20px;
   padding: 40px;
-  box-shadow: 0 0 0 0.1rem rgba(39, 43, 51, 0.2);
+  box-shadow: 0 0 0 0.1rem rgba(32, 43, 51, 0.2);
   width: 75%;
   height: 150px;
 }

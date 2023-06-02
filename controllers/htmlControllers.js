@@ -72,6 +72,27 @@ const displayCreatePost = (req, res) => {
   });
 };
 
+// This is a function that will display the edit post page
+const displayEditPost = async (req, res) => {
+  try {
+    // Grab the post with the id passed in as a parameter
+    const postData = await Post.findByPk(req.params.id);
+    // Serialize the data so the template can read it
+    const post = postData.get({ plain: true });
+    // Render the editPost template with the post data
+    res.render("editPost", {
+      post,
+      nav: true,
+      logged_in: req.session.logged_in,
+      header: "Edit Post",
+    });
+  } catch (err) {
+    console.log("Problem with displayEditPost function");
+    console.log({ err });
+    res.status(500).json({ err });
+  }
+};
+
 // This is a function that will display a single Post and its Comments to its own page
 const displayPost = async (req, res) => {
   try {
@@ -114,5 +135,6 @@ module.exports = {
   displaySignup,
   displayDashboard,
   displayCreatePost,
+  displayEditPost,
   displayPost,
 };

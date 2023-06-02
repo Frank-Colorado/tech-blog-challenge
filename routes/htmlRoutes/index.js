@@ -6,6 +6,7 @@ const {
   displaySignup,
   displayDashboard,
   displayCreatePost,
+  displayEditPost,
   displayPost,
 } = require("../../controllers/htmlControllers");
 
@@ -28,6 +29,6 @@ router.get("/post/:id", displayPost);
 router.get("/createPost", displayCreatePost);
 
 // This route will display the edit page for a single Post
-// router.get("/edit/:id", editPost);
+router.get("/edit/:id", displayEditPost);
 
 module.exports = router;
