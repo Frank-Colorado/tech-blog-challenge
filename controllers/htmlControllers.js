@@ -54,7 +54,7 @@ const displayDashboard = async (req, res) => {
       posts,
       nav: true,
       logged_in: req.session.logged_in,
-      header: "Dashboard",
+      header: "Your Dashboard",
     });
   } catch (err) {
     console.log("Problem with displayDashboard function");
