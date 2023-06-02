@@ -45,3 +45,27 @@ const updatePost = async (req, res) => {
     res.status(500).json({ error: "Failed to update post" });
   }
 };
+
+// This is a function called deletePost that will be called with the DELETE /api/posts/:id route
+const deletePost = async (req, res) => {
+  try {
+    // We delete the post with the matching id
+    const deletedPost = await Post.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    // We send a response to the client with the deleted post
+    res.status(200).json(deletedPost);
+  } catch (err) {
+    // If there is an error, we log the error and send a response with a 500 status code and an error message
+    console.error({ err });
+    res.status(500).json({ error: "Failed to delete post" });
+  }
+};
+
+module.exports = {
+  createPost,
+  updatePost,
+  deletePost,
+};
