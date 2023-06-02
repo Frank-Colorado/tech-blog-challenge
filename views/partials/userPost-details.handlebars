@@ -1,0 +1,23 @@
+<div class="col-5">
+  <h2> Title </h2>
+  <label for="exampleFormControlTextarea1" class="form-label"></label>
+  <textarea
+    type="title"
+    id="title"
+    class="form-control mb-3 p-2 title-textarea"
+    maxlength="50"
+    placeholder="Create a title (Can't be longer than 50 characters!)"
+  >{{this.title}}</textarea>
+  <h2> Content </h2>
+  <textarea
+    class="form-control p-3"
+    id="content"
+    rows="10"
+    placeholder="What's on your mind?"
+  > {{this.content}} </textarea>
+  <div class="text-end me-3">
+    <button id="postBtn" type="submit" class="btn mt-3">Post</button>
+    <p id="alert" class="pt-3 red"></p>
+  </div>
+
+</div>
