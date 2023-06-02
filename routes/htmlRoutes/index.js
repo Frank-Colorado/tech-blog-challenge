@@ -20,15 +20,15 @@ router.get("/login", displayLogin);
 router.get("/signup", displaySignup);
 
 // This route will display the dashboard page
-router.get("/dashboard", displayDashboard);
+router.get("/dashboard", withAuth, displayDashboard);
 
 // This route will display a single Post and its Comments to its own page
-router.get("/post/:id", displayPost);
+router.get("/post/:id", withAuth, displayPost);
 
 // This route will display the create post page
-router.get("/createPost", displayCreatePost);
+router.get("/createPost", withAuth, displayCreatePost);
 
 // This route will display the edit page for a single Post
-router.get("/edit/:id", displayEditPost);
+router.get("/edit/:id", withAuth, displayEditPost);
 
 module.exports = router;
