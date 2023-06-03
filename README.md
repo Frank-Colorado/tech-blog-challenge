@@ -28,11 +28,11 @@ This application was created to complete challenge 14 for my coding bootcamp. Th
 
 ## Visuals
 
-IMG HERE
+![image](https://github.com/Frank-Colorado/tech-blog-challenge/assets/123683792/641ddd22-810b-4ce9-adbf-42cf7f7c687c)
 
 ## Website
 
-URL HERE
+https://tech-blog-challenge14.herokuapp.com/
 
 ## Installation
 
