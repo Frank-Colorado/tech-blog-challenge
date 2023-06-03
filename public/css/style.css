@@ -75,6 +75,13 @@ textarea {
   height: 70px;
 }
 
+.commentBtn {
+  font-size: 1rem;
+  margin-right: 100px;
+  width: 95px;
+  height: 40px;
+}
+
 .btnContainer {
   display: flex;
   justify-content: space-between;
